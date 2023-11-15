@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1081348265910",
+    "project_id": "app-compra-e-venda",
+    "storage_bucket": "app-compra-e-venda.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1081348265910:android:87dd99c74d323cf9c09317",
+        "android_client_info": {
+          "package_name": "com.thiago.appcompraevenda"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuA4aCnKNvwGCUFK-uVRdscB-yt0kuSWw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
