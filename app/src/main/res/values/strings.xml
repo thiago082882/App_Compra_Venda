@@ -24,6 +24,7 @@
     <string name="Btn_registrar">Registrar</string>
 
 
+    <string name="Btn_encerrar_sessao">Encerrar sessão</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

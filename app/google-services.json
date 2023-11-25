@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1081348265910",
+    "firebase_url": "https://app-compra-e-venda-default-rtdb.firebaseio.com",
     "project_id": "app-compra-e-venda",
     "storage_bucket": "app-compra-e-venda.appspot.com"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.thiago.appcompraevenda"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "1081348265910-i2e09lj898ud7onecdq8kum33sbv6npi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thiago.appcompraevenda",
+            "certificate_hash": "e14b804c07fb1438870bf9a69ba18efcbce96f51"
+          }
+        },
+        {
+          "client_id": "1081348265910-9elgrr23giea6lrqkfccoo84hmj7kqt4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDuA4aCnKNvwGCUFK-uVRdscB-yt0kuSWw"
@@ -20,7 +34,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1081348265910-9elgrr23giea6lrqkfccoo84hmj7kqt4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
