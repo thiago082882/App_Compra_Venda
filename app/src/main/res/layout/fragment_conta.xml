@@ -1,18 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
     tools:context=".fragmentos.ContaFragment">
 
-    <com.google.android.material.button.MaterialButton
-       android:id="@+id/Btn_encerrar_sessao"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/m_button_height"
-        android:layout_centerInParent="true"
-        android:text="@string/Btn_encerrar_sessao"
-        android:textAllCaps="true"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+<TextView
+    android:id="@+id/Txt_perfil"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/Txt_perfil"
+    android:gravity="center"
+    android:textSize="20sp"
+    android:textStyle="bold"
+    android:layout_marginTop="15dp"
+    />
+        <ImageView
+            android:id="@+id/Iv_perfil"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:scaleType="centerCrop"
+            android:layout_below="@id/Txt_perfil"
+            android:src="@drawable/img_perfil" />
+        <TextView
+            android:id="@+id/Txt_informacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Iv_perfil"
+            android:text="@string/Txt_informacao"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            />
+        <!-- Nomes-->
+        <TextView
+            android:id="@+id/Txt_nomes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Txt_nomes"
+            android:layout_below="@id/Txt_informacao"
+            android:layout_marginTop="15dp"
+            />
+        <TextView
+            android:id="@+id/Tv_nomes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Tv_nomes"
+            android:layout_below="@id/Txt_informacao"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentEnd="true"
+            />
+        <!-- Email-->
+        <TextView
+            android:id="@+id/Txt_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Txt_email"
+            android:layout_below="@id/Txt_nomes"
+            android:layout_marginTop="15dp"
+            />
+        <TextView
+            android:id="@+id/Tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Tv_email"
+            android:layout_below="@id/Txt_nomes"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentEnd="true"
+            />
+        <!-- Data de Nascimento-->
+        <TextView
+            android:id="@+id/Txt_dta_nascimento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Txt_nascimento"
+            android:layout_below="@id/Txt_email"
+            android:layout_marginTop="15dp"
+            />
+        <TextView
+            android:id="@+id/Tv_dta_nascimento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Txt_email"
+            android:text="@string/Tv_nascimento"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentEnd="true"
+            />
+        <!-- Membro Desde-->
+        <TextView
+            android:id="@+id/Txt_membro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Txt_dta_nascimento"
+            android:text="@string/Txt_membro"
+            android:layout_marginTop="15dp"
+            />
+        <TextView
+            android:id="@+id/Tv_membro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Txt_dta_nascimento"
+            android:layout_marginTop="15dp"
+            android:text="@string/Tv_membro"
+            android:layout_alignParentEnd="true"
+            />
+        <!-- Telefone-->
+        <TextView
+            android:id="@+id/Txt_telefone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Txt_membro"
+            android:text="@string/Txt_telefone"
+            android:layout_marginTop="15dp"
+            />
+        <TextView
+            android:id="@+id/Tv_telefone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Txt_membro"
+            android:text="@string/Tv_telefone"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentEnd="true"
+            />
+        <!-- Status da Conta-->
+        <TextView
+            android:id="@+id/Txt_status_conta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Txt_telefone"
+            android:text="@string/Txt_status_conta"
+            android:layout_marginTop="15dp"
+            />
+        <TextView
+            android:id="@+id/Tv_status_conta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Txt_telefone"
+            android:text="@string/Tv_status_conta"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentEnd="true"
+            />
+            <TextView
+                android:id="@+id/TxtOpcao"
+                android:text="@string/TxtOpcao"
+                android:layout_below="@id/Txt_status_conta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                    />
+            <!-- Editar perfil-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Btn_editar_perfil"
+                android:layout_width="200dp"
+                android:layout_height="@dimen/m_button_height"
+                android:layout_centerInParent="true"
+             android:layout_below="@id/TxtOpcao"
+                android:text="@string/Btn_editar_perfil"
+                app:icon="@drawable/ic_edit"
+                android:textAllCaps="true"
+                    />
+            <!-- Encerrar Sessão-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/Btn_encerrar_sessao"
+                android:layout_width="200dp"
+                android:layout_height="@dimen/m_button_height"
+                android:layout_below="@id/Btn_editar_perfil"
+                android:layout_centerInParent="true"
+                android:text="@string/Btn_encerrar_sessao"
+                app:icon="@drawable/ic_exit"
+                android:textAllCaps="true"
+                />
+    </RelativeLayout>
 
-        />
 
-</RelativeLayout>
+
+
+
+</ScrollView>

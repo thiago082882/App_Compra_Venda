@@ -24,8 +24,27 @@
     <string name="Btn_registrar">Registrar</string>
 
 
-    <string name="Btn_encerrar_sessao">Encerrar sessão</string>
 
+
+    <!--Perfil de usuario-->
+    <string name="Txt_perfil">Perfil de usuario</string>
+    <string name="Txt_informacao">Informação:</string>
+    <string name="Txt_nomes">Nomes:</string>
+    <string name="Tv_nomes">Nomes Completos</string>
+    <string name="Txt_email">Email:</string>
+    <string name="Tv_email">email@dominio.com</string>
+    <string name="Txt_nascimento">Data de nasc:</string>
+    <string name="Tv_nascimento">dd/mm/aaaa</string>
+    <string name="Txt_membro">Membro desde:</string>
+    <string name="Tv_membro">dd/mm/aaaa</string>
+    <string name="Txt_telefone">Telefone:</string>
+    <string name="Tv_telefone">999999999 </string>
+    <string name="Txt_status_conta">Status de conta</string>
+    <string name="Tv_status_conta">Não Verificado</string>
+
+    <string name="TxtOpcao">Opcao</string>
+    <string name="Btn_editar_perfil">EditarPerfil </string>
+    <string name="Btn_encerrar_sessao">Encerrar sessão</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
