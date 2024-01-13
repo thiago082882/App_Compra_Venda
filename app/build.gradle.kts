@@ -65,6 +65,9 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
 
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    //https://github.com/hbb20/CountryCodePickerProject
+    implementation("com.hbb20:ccp:2.7.0")
+
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 
 }

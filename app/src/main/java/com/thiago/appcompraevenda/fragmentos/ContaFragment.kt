@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.thiago.appcompraevenda.Constants
+import com.thiago.appcompraevenda.EditarPerfil
 import com.thiago.appcompraevenda.OpcaoLogin
 import com.thiago.appcompraevenda.R
 
@@ -45,7 +46,13 @@ class ContaFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         firebaseAuth = FirebaseAuth.getInstance()
+
         lerInfo()
+
+        binding.BtnEditarPerfil.setOnClickListener {
+            startActivity(Intent(mContext,
+                EditarPerfil::class.java))
+        }
         binding.BtnEncerrarSessao.setOnClickListener {
             firebaseAuth.signOut()
             startActivity(Intent(mContext,OpcaoLogin::class.java))
