@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".anuncios.CriarAnuncio">
+
+    <RelativeLayout
+        android:id="@+id/RL_imagen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+        <ImageView
+            android:id="@+id/agragarImg"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/agregar_img" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/RL_imagen"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RV_imagens"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="4"
+                tools:listitem="@layout/item_imagens_selecionadas"
+
+                />
+
+            <!-- Marca de Produto-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TIL_Marca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/RV_imagens"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                android:layout_marginTop="10dp">
+                <EditText
+                   android:id="@+id/Et_marca"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Et_marca"
+                    android:inputType="textPersonName|textCapSentences"
+
+                    />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Categoria-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TIL_Categoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TIL_Marca"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_marginTop="10dp">
+                <AutoCompleteTextView
+                    android:id="@+id/Et_categoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Et_marca"
+                    android:inputType="none"
+
+                    />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Condição-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TIL_Condicao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TIL_Categoria"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_marginTop="10dp">
+                <AutoCompleteTextView
+                    android:id="@+id/Et_condicao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Condicao"
+                    android:inputType="none"
+
+                    />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!-- Price-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TIL_preco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TIL_Condicao"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:id="@+id/Et_preco"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Et_preco"
+                    android:inputType="number"
+
+                    />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!-- Titulo-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TIL_titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TIL_preco"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:id="@+id/Et_titulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Et_titulo"
+                    android:inputType="textPersonName|textCapSentences"
+
+
+                    />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Description-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TIL_descricao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TIL_titulo"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                android:layout_marginTop="10dp">
+                <EditText
+                    android:id="@+id/Et_descricao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/Et_description"
+                    android:minHeight="100dp"
+                    android:gravity="top|start"
+                    android:inputType="textMultiLine|textCapSentences"
+
+
+                    />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+<com.google.android.material.button.MaterialButton
+    android:id="@+id/Btn_criar_anuncio"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:textAllCaps="true"
+    android:text="@string/Btn_criar_anuncio"
+    android:layout_margin="10dp"
+    app:cornerRadius="8dp"
+
+    />
+
+</RelativeLayout>

@@ -58,6 +58,7 @@ dependencies {
 
     //https://firebase.google.com/docs/database/android/start?hl=pt&authuser=0
     implementation("com.google.firebase:firebase-database-ktx")
+    implementation("com.google.firebase:firebase-storage")
 
 //https://firebase.google.com/docs/database/android/start?hl=pt&authuser=0
     implementation("com.google.android.gms:play-services-auth:20.7.0")
@@ -69,5 +70,9 @@ dependencies {
     implementation("com.hbb20:ccp:2.7.0")
 
     implementation("com.github.bumptech.glide:glide:4.16.0")
+
+
+
+
 
 }

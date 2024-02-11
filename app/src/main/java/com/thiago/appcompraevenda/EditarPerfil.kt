@@ -20,6 +20,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.google.firebase.storage.FirebaseStorage
 import com.thiago.appcompraevenda.databinding.ActivityEditarPerfilBinding
 import com.thiago.appcompraevenda.databinding.ActivityMainBinding
 
@@ -44,10 +45,61 @@ class EditarPerfil : AppCompatActivity() {
 
         carregarInfo()
 
+        binding.BtnAtualizar.setOnClickListener {
+            validarInfo()
+        }
 
         binding.FABmudarimg.setOnClickListener { selectImage() }
 
 
+    }
+
+    private var nomes = ""
+    private var f_nasc = ""
+    private var codigo = ""
+    private var telefone = ""
+    private fun validarInfo() {
+
+        nomes = binding.ETNomes.text.toString().trim()
+        f_nasc = binding.EtDNasc.text.toString().trim()
+        codigo = binding.selectCod.selectedCountryCodeWithPlus
+        telefone = binding.EtTelefone.text.toString().trim()
+
+        if(nomes.isEmpty()){
+            Toast.makeText(this, "Ingresse seu nome", Toast.LENGTH_SHORT).show()
+        }else if(f_nasc.isEmpty()){
+            Toast.makeText(this, "Ingresse sua data  de nascimento", Toast.LENGTH_SHORT).show()
+        }else if(codigo.isEmpty()){
+            Toast.makeText(this, "Selecione um codigo", Toast.LENGTH_SHORT).show()
+        }else if(telefone.isEmpty()){
+            Toast.makeText(this, "Ingresse um telefone", Toast.LENGTH_SHORT).show()
+        }else{
+            atualizarinfo()
+        }
+
+    }
+
+    private fun atualizarinfo() {
+        progressDialog.setMessage("Atualizando Informação")
+
+        val hashMap : HashMap<String,Any> = HashMap()
+
+        hashMap["nome"] = "${nomes}"
+        hashMap["fecha_nac"] = "${f_nasc}"
+        hashMap["codigoTelefone"] = "${codigo}"
+        hashMap["telefone"] = "${telefone}"
+
+        val ref = FirebaseDatabase.getInstance().getReference("Usuarios")
+        ref.child(firebaseAuth.uid!!)
+            .updateChildren(hashMap)
+            .addOnSuccessListener {
+                progressDialog.dismiss()
+                Toast.makeText(applicationContext, "Informações atualizada", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener {e->
+                progressDialog.dismiss()
+                Toast.makeText(applicationContext, "${e.message}", Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun carregarInfo() {
@@ -81,7 +133,7 @@ class EditarPerfil : AppCompatActivity() {
                         binding.selectCod.setCountryForPhoneCode(codigo)
 
                     } catch (e: Exception) {
-                        Toast.makeText(this@EditarPerfil, "${e.message}", Toast.LENGTH_SHORT).show()
+                       // Toast.makeText(this@EditarPerfil, "${e.message}", Toast.LENGTH_SHORT).show()
                     }
                 }
 
@@ -89,6 +141,51 @@ class EditarPerfil : AppCompatActivity() {
                     TODO("Not yet implemented")
                 }
             })
+    }
+    private fun subirImagemStorage(){
+        progressDialog.setMessage("Subir imagem a storage")
+        progressDialog.show()
+
+        val rotaImage = "imagensPerfil/" + firebaseAuth.uid
+        val ref = FirebaseStorage.getInstance().getReference(rotaImage)
+        ref.putFile(imageUri!!)
+            .addOnSuccessListener {taskSnapShot->
+
+                val uriTask = taskSnapShot.storage.downloadUrl
+                while(!uriTask.isSuccessful);
+                val urlImageCarregada = uriTask.result.toString()
+                if(uriTask.isSuccessful){
+                    atualizaImageBD(urlImageCarregada)
+                }
+
+
+            }
+            .addOnFailureListener{e->
+                progressDialog.dismiss()
+                Toast.makeText(applicationContext, "${e.message}", Toast.LENGTH_SHORT).show()
+            }
+
+    }
+
+    private fun atualizaImageBD(urlImageCarregada: String) {
+        progressDialog.setMessage("Atualizando imagem...")
+        progressDialog.show()
+
+        val hashMap : HashMap<String,Any> = HashMap()
+        if(imageUri !=null){
+      hashMap["urlImagemPerfil"] = urlImageCarregada
+        }
+        val ref = FirebaseDatabase.getInstance().getReference("Usuarios")
+        ref.child(firebaseAuth.uid!!)
+            .updateChildren(hashMap)
+            .addOnSuccessListener {
+                progressDialog.dismiss()
+                Toast.makeText(applicationContext, "Sua Imagem de perfil será atualizada", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener {e->
+                progressDialog.dismiss()
+                Toast.makeText(applicationContext, "${e.message}", Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun selectImage() {
@@ -162,7 +259,8 @@ class EditarPerfil : AppCompatActivity() {
     private val resultCamera_ARL =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
-                try {
+                subirImagemStorage()
+              /*  try {
                     Glide.with(this)
                         .load(imageUri)
                         .placeholder(R.drawable.img_perfil)
@@ -170,10 +268,12 @@ class EditarPerfil : AppCompatActivity() {
 
                 } catch (e: Exception) {
 
-                }
+                } */
             } else {
                 Toast.makeText(this, "Cancelado", Toast.LENGTH_SHORT).show()
             }
+
+
 
         }
 
@@ -200,7 +300,8 @@ class EditarPerfil : AppCompatActivity() {
             if (result.resultCode == Activity.RESULT_OK) {
   val data = result.data
                 imageUri = data!!.data
-                try {
+                subirImagemStorage()
+                /*try {
                     Glide.with(this)
                         .load(imageUri)
                         .placeholder(R.drawable.img_perfil)
@@ -209,6 +310,8 @@ class EditarPerfil : AppCompatActivity() {
                 } catch (e: Exception) {
 
                 }
+
+                 */
             }else{
                 Toast.makeText(this, "Cancelado", Toast.LENGTH_SHORT).show()
             }

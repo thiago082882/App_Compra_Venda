@@ -56,6 +56,15 @@
     <string name="Et_telefone">Telefone</string>
     <string name="Btn_atualizar">Atualizar</string>
 
+    <!--Criar anuncio-->
+    <string name="Et_marca">Nome da marca</string>
+    <string name="Categoria">Categoria</string>
+    <string name="Condicao">Condição</string>
+    <string name="Localizacao">Localização</string>
+    <string name="Et_preco">preço</string>
+    <string name="Et_titulo">Titulo</string>
+    <string name="Et_description">Descrição</string>
+    <string name="Btn_criar_anuncio">Criar anuncio</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

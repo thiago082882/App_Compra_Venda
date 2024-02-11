@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
+import com.thiago.appcompraevenda.anuncios.CriarAnuncio
 import com.thiago.appcompraevenda.databinding.ActivityMainBinding
 import com.thiago.appcompraevenda.databinding.FragmentInicioBinding
 import com.thiago.appcompraevenda.fragmentos.ChatsFragment
@@ -46,7 +47,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
+binding.FAB.setOnClickListener {
+    startActivity(Intent(this,CriarAnuncio::class.java))
+}
     }
 
     private fun comprovarSessao(){
