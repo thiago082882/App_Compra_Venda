@@ -19,9 +19,10 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.thiago.appcompraevenda.Constants
 import com.thiago.appcompraevenda.R
-import com.thiago.appcompraevenda.adaptadores.AdaptadorImagemSelecionada
+import com.thiago.appcompraevenda.SelecioneLocal
+import com.thiago.appcompraevenda.adapters.AdaptadorImagemSelecionada
 import com.thiago.appcompraevenda.databinding.ActivityCriarAnuncioBinding
-import com.thiago.appcompraevenda.modelos.ModeloImagemSelecionada
+import com.thiago.appcompraevenda.models.ModeloImagemSelecionada
 
 class CriarAnuncio : AppCompatActivity() {
     private lateinit var binding: ActivityCriarAnuncioBinding
@@ -58,14 +59,17 @@ class CriarAnuncio : AppCompatActivity() {
 
         carregarImagens()
 
-        binding.agragarImg.setOnClickListener {
+        binding.agregarImg.setOnClickListener {
 
             mostrarOpcoes()
 
         }
-
+        binding.EtLocalizacao.setOnDismissListener {
+            val intent = Intent(this, SelecioneLocal::class.java)
+            selecioneLocal_ARL.launch(intent)
+        }
         binding.BtnCriarAnuncio.setOnClickListener {
-            validarDados()
+     validarDados()
         }
 
     }
@@ -99,6 +103,10 @@ class CriarAnuncio : AppCompatActivity() {
             binding.EtCondicao.error = "Ingresse uma Condição"
             binding.EtCondicao.requestFocus()
         }
+     else  if(direcao.isEmpty()){
+        binding.EtLocalizacao.error = "Ingresse uma localização"
+        binding.EtLocalizacao.requestFocus()
+    }
        else if(preco.isEmpty()){
             binding.EtPreco.error = "Ingresse um Preço"
             binding.EtPreco.requestFocus()
@@ -117,7 +125,21 @@ class CriarAnuncio : AppCompatActivity() {
             agregarAnuncio()
         }
     }
+    private val selecioneLocal_ARL =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()){resultado->
+            if (resultado.resultCode == Activity.RESULT_OK){
+                val data = resultado.data
+                if (data != null){
+                    latitude = data.getDoubleExtra("latitude", 0.0)
+                    longitude = data.getDoubleExtra("longitude", 0.0)
+                    direcao = data.getStringExtra("direcao") ?: ""
 
+                    binding.EtLocalizacao.setText(direcao)
+                }
+            }else{
+                Toast.makeText(this, "Cancelado",Toast.LENGTH_SHORT).show()
+            }
+        }
     private fun agregarAnuncio() {
       progressDialog.setMessage("Agregando Anuncio")
         progressDialog.show()
@@ -176,9 +198,8 @@ carregarImagensStorage(keyId)
 
                     }
                     progressDialog.dismiss()
-                    onBackPressedDispatcher.onBackPressed()
                     Toast.makeText(this, "Anuncio publicado", Toast.LENGTH_SHORT).show()
-
+                    limparCampos()
 
                 }
                 .addOnFailureListener {e->
@@ -187,9 +208,19 @@ carregarImagensStorage(keyId)
         }
     }
 
-
+    private fun limparCampos(){
+        imagensSelecionadaArrayList.clear()
+        adaptadorImagemSelecionada.notifyDataSetChanged()
+        binding.EtMarca.setText("")
+        binding.EtCategoria.setText("")
+        binding.EtCondicao.setText("")
+        binding.EtLocalizacao.setText("")
+        binding.EtPreco.setText("")
+        binding.EtTitulo.setText("")
+        binding.EtDescricao.setText("")
+    }
     private fun mostrarOpcoes() {
-        val popUpMenu = PopupMenu(this, binding.agragarImg)
+        val popUpMenu = PopupMenu(this, binding.agregarImg)
 
         popUpMenu.menu.add(Menu.NONE, 1, 1, "Câmera")
         popUpMenu.menu.add(Menu.NONE, 2, 2, "Galeria")

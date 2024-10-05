@@ -1,53 +1,50 @@
 <resources>
     <string name="app_name">App Compra e Venda</string>
-
-
+    <string name="my_google_maps_api_key">AIzaSyD12B3IWK6i0SrDGn8ytdEeyIc6K0VQFCU</string>
     <string name="default_web_client_id">1081348265910-9elgrr23giea6lrqkfccoo84hmj7kqt4.apps.googleusercontent.com</string>
-    <string name="Item_Inicio">Inicio</string>
-    <string name="Item_Chats">Chats</string>
+    <string name="Item_Inicio">Início</string>
+    <string name="Item_Chats">Conversas</string>
     <string name="Item_Vender">Vender</string>
-    <string name="Item_Meus_Anuncios">Meus Anuncios</string>
+    <string name="Item_Meus_Anuncios">Meus Anúncios</string>
     <string name="Item_Conta">Conta</string>
 
-    <string name="TituloRl">Titulo</string>
+    <string name="TituloRl">Título</string>
 
+    <string name="Ingressar_Email">Entrar com Email</string>
+    <string name="Ingressar_Google">Entrar com Google</string>
 
-    <string name="Ingressar_Email">Ingressar  Com Email</string>
-    <string name="Ingressar_Google">Ingressar  Com Google</string>
-
-    <string name="Txt_Login">Login de usuario</string>
+    <string name="Txt_Login">Login do usuário</string>
     <string name="Et_email">Email</string>
     <string name="Et_password">Senha</string>
-    <string name="Btn_ingressar">Ingressar</string>
+    <string name="Btn_ingressar">Entrar</string>
     <string name="Txt_no_conta">Não tem uma conta?</string>
     <string name="Txt_registrar">REGISTRAR</string>
 
-    <string name="Txt_Registro">Registro de usuario</string>
+    <string name="Txt_Registro">Cadastro de usuário</string>
     <string name="Et_r_password">Repetir Senha</string>
     <string name="Btn_registrar">Registrar</string>
 
-
-    <!--Perfil de usuario-->
-    <string name="Txt_perfil">Perfil de usuario</string>
+    <!--Perfil do usuário-->
+    <string name="Txt_perfil">Perfil do usuário</string>
     <string name="Txt_informacao">Informação:</string>
     <string name="Txt_nomes">Nomes:</string>
     <string name="Tv_nomes">Nomes Completos</string>
     <string name="Txt_email">Email:</string>
     <string name="Tv_email">email@dominio.com</string>
-    <string name="Txt_nascimento">Data de nasc:</string>
+    <string name="Txt_nascimento">Data de nasc.:</string>
     <string name="Tv_nascimento">dd/mm/aaaa</string>
     <string name="Txt_membro">Membro desde:</string>
     <string name="Tv_membro">dd/mm/aaaa</string>
     <string name="Txt_telefone">Telefone:</string>
-    <string name="Tv_telefone">999999999 </string>
-    <string name="Txt_status_conta">Status de conta</string>
+    <string name="Tv_telefone">999999999</string>
+    <string name="Txt_status_conta">Status da conta</string>
     <string name="Tv_status_conta">Não Verificado</string>
 
-    <string name="TxtOpcao">Opcao</string>
-    <string name="Btn_editar_perfil">EditarPerfil </string>
+    <string name="TxtOpcao">Opção</string>
+    <string name="Btn_editar_perfil">Editar Perfil</string>
     <string name="Btn_encerrar_sessao">Encerrar sessão</string>
 
-    <!--Editar Perfil de usuario-->
+    <!--Editar Perfil do usuário-->
 
     <string name="Txt_editar_p">Editar Perfil</string>
     <string name="Et_nomes">Nomes Completos</string>
@@ -56,15 +53,102 @@
     <string name="Et_telefone">Telefone</string>
     <string name="Btn_atualizar">Atualizar</string>
 
-    <!--Criar anuncio-->
+    <!--Criar anúncio-->
     <string name="Et_marca">Nome da marca</string>
     <string name="Categoria">Categoria</string>
     <string name="Condicao">Condição</string>
     <string name="Localizacao">Localização</string>
-    <string name="Et_preco">preço</string>
-    <string name="Et_titulo">Titulo</string>
+    <string name="Et_preco">Preço</string>
+    <string name="Et_titulo">Título</string>
     <string name="Et_description">Descrição</string>
-    <string name="Btn_criar_anuncio">Criar anuncio</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Btn_criar_anuncio">Criar anúncio</string>
+
+    <!--Mapas-->
+    <string name="Txt_selec_ubicacion">Selecione localização</string>
+    <string name="Btn_listo">Pronto</string>
+
+    <!--Fragmento início-->
+    <string name="Tv_locacion">Escolha uma localização</string>
+    <string name="Et_buscar">Buscar</string>
+    <string name="Txt_categoria">Categorias</string>
+    <string name="Tv_categoria">Categoria</string>
+
+    <!--Item anúncio-->
+    <string name="Tv_titulo">Nome do produto</string>
+    <string name="Tv_descripcion">Descrição do produto, visualizável em no máximo 3 linhas</string>
+    <string name="Tv_direccion">Endereço</string>
+    <string name="Tv_condicion">Novo</string>
+    <string name="Tv_simbolo_precio">R$</string>
+    <string name="Tv_precio">00</string>
+    <string name="Tv_fecha">dd/MM/yyyy</string>
+
+    <string name="Txt_detalle_info">Detalhes do anúncio</string>
+    <string name="Tv_cat">Categoria do anúncio</string>
+    <string name="Txt_titulo">Título</string>
+    <string name="Txt_descripcion">Descrição</string>
+    <string name="Tv_descr">Descrição do anúncio</string>
+    <string name="Txt_direccion">Endereço</string>
+    <string name="Txt_vistas">Número de visualizações do anúncio:</string>
+    <string name="Tv_vistas">0</string>
+    <string name="Txt_descr_vendedor">Descrição do vendedor</string>
+    <string name="Txt_estado">Estado</string>
+    <string name="Tv_estado">Disponível</string>
+
+    <!--Opções de detalhes do anúncio-->
+    <string name="Btn_mapa">Mapa</string>
+    <string name="Btn_llamar">Ligar</string>
+    <string name="Btn_sms">SMS</string>
+    <string name="Btn_chat">Chat</string>
+
+    <string name="imagenContadorTv">1/4</string>
+
+    <!--Confirmar eliminar imagem-->
+    <string name="Txt_eliminar">Tem certeza que deseja excluir a imagem?</string>
+    <string name="Btn_si">Sim</string>
+    <string name="Btn_no">Cancelar</string>
+
+    <!--Confirmar marcar como vendido-->
+    <string name="Txt_marcar_vendido">Marcar o produto como vendido?</string>
+
+    <string name="Txt_perfil_vendedor">Perfil do vendedor</string>
+    <string name="Txt_anuncios">Anúncios publicados:</string>
+    <string name="Tv_num_anuncios">0</string>
+
+    <string name="Txt_comentarios">Comentários</string>
+    <string name="Txt_agregar">Adicionar um comentário</string>
+
+    <string name="Et_agregar_comentario">Escreva um comentário</string>
+    <string name="Btn_comentar">Comentar</string>
+
+    <string name="Tv_nomes_comentario">Nomes</string>
+    <string name="Tv_fecha_comentario">dd/MM/yyyy</string>
+    <string name="Tv_comentario">Comentário do usuário</string>
+
+    <string name="Txt_olvide_pass">Esqueci minha senha</string>
+    <string name="Tv_recuperar">Recuperar</string>
+    <string name="Txt_olvide_password">Esqueci minha senha</string>
+
+    <string name="Txt_instrucciones">Esqueceu sua senha? Insira seu e-mail cadastrado.
+    Nós enviaremos as instruções de recuperação.</string>
+    <string name="Btn_enviar_instrucciones">Enviar</string>
+
+    <string name="Txt_cambiar_pass">Alterar senha</string>
+    <string name="Txt_instr_cambio_pass">Sua nova senha deve ser diferente da atual</string>
+    <string name="Et_password_actual">Senha atual</string>
+    <string name="Et_password_nueva">Nova senha</string>
+    <string name="Et_password_nueva_r">Repita a nova senha</string>
+    <string name="Btn_actualizar_pass">Atualizar</string>
+
+    <!--Chat-->
+    <string name="Txt_nombre_vendedor_chat">Nome do vendedor</string>
+    <string name="Txt_estado_chat">Online</string>
+    <string name="Et_mensaje_chat">Escreva algo</string>
+    <string name="Tv_tiempo_mensaje">dd/MM/yyyy hh:mm</string>
+    <string name="Btn_cerrar_visualizador">Fechar</string>
+
+    <string name="Txt_eliminar_cuenta">Excluir conta</string>
+    <string name="Txt_mensaje_eliminar">Tem certeza que deseja excluir sua conta? Esta ação não pode ser desfeita.</string>
+    <string name="Btn_eliminar_mi_cuenta">Excluir minha conta</string>
+
+
 </resources>

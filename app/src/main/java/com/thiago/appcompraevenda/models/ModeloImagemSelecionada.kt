@@ -1,4 +1,4 @@
-package com.thiago.appcompraevenda.modelos
+package com.thiago.appcompraevenda.models
 
 import android.net.Uri
 

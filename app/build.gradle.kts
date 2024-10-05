@@ -71,6 +71,16 @@ dependencies {
 
     implementation("com.github.bumptech.glide:glide:4.16.0")
 
+    implementation ("com.google.android.gms:play-services-maps:18.1.0")
+    implementation ("com.google.android.libraries.places:places:3.1.0")
+
+    implementation ("com.github.chrisbanes:PhotoView:2.3.0")
+    implementation ("com.google.firebase:firebase-messaging-ktx:23.3.1")
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation ("com.android.volley:volley:1.2.1")
+
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
+
 
 
 

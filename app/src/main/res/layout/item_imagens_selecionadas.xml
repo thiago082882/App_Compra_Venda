@@ -10,15 +10,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <ImageView
-            android:id="@+id/item_imagen"
-            android:src="@drawable/item_imagen"
+            android:id="@+id/item_imagem"
+            android:src="@drawable/item_imagem"
             android:adjustViewBounds="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
         <ImageView
-            android:id="@+id/cerrar_item"
-            android:src="@drawable/cerrar"
+            android:id="@+id/encerrar_item"
+            android:src="@drawable/encerrar"
             android:layout_alignParentEnd="true"
             android:padding="10dp"
             android:layout_width="wrap_content"

@@ -1,4 +1,4 @@
-package com.thiago.appcompraevenda.adaptadores
+package com.thiago.appcompraevenda.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.thiago.appcompraevenda.R
 import com.thiago.appcompraevenda.databinding.ItemImagensSelecionadasBinding
-import com.thiago.appcompraevenda.modelos.ModeloImagemSelecionada
+import com.thiago.appcompraevenda.models.ModeloImagemSelecionada
 
 class AdaptadorImagemSelecionada(
     private val context: Context,
@@ -34,7 +34,7 @@ class AdaptadorImagemSelecionada(
         try {
             Glide.with(context)
                 .load(imagemUri)
-                .placeholder(R.drawable.item_imagen)
+                .placeholder(R.drawable.item_imagem)
                 .into(holder.item_imagem)
         }catch (e:Exception){
 
@@ -46,7 +46,7 @@ class AdaptadorImagemSelecionada(
         }
     }
     inner  class HolderImagensSelecionada(itemView:View):ViewHolder(itemView){
-        var item_imagem = binding.itemImagen
-        var btn_encerrar = binding.cerrarItem
+        var item_imagem = binding.itemImagem
+        var btn_encerrar = binding.encerrarItem
     }
 }
