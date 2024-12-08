@@ -17,7 +17,7 @@ import com.google.firebase.database.ValueEventListener
 import com.thiago.appcompraevenda.databinding.FragmentMeusAnunciosPublicadosBinding
 
 
-class Mis_Anuncios_Publicados_Fragment : Fragment() {
+class Meus_Anuncios_Publicados_Fragment : Fragment() {
 
     private lateinit var binding : FragmentMeusAnunciosPublicadosBinding
     private lateinit var mContext : Context

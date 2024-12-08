@@ -20,9 +20,9 @@ import com.google.firebase.storage.FirebaseStorage
 import com.thiago.appcompraevenda.Constants
 import com.thiago.appcompraevenda.R
 import com.thiago.appcompraevenda.SelecioneLocal
-import com.thiago.appcompraevenda.adapters.AdaptadorImagemSelecionada
+import com.thiago.appcompraevenda.adapters.ImagemSelecionadaAdapter
 import com.thiago.appcompraevenda.databinding.ActivityCriarAnuncioBinding
-import com.thiago.appcompraevenda.models.ModeloImagemSelecionada
+import com.thiago.appcompraevenda.models.ImagemSelecionada
 
 class CriarAnuncio : AppCompatActivity() {
     private lateinit var binding: ActivityCriarAnuncioBinding
@@ -32,8 +32,8 @@ class CriarAnuncio : AppCompatActivity() {
 
     private var imageUri: Uri? = null
 
-    private lateinit var imagensSelecionadaArrayList: ArrayList<ModeloImagemSelecionada>
-    private lateinit var adaptadorImagemSelecionada: AdaptadorImagemSelecionada
+    private lateinit var imagensSelecionadaArrayList: ArrayList<ImagemSelecionada>
+    private lateinit var adaptadorImagemSelecionada: ImagemSelecionadaAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -290,7 +290,7 @@ carregarImagensStorage(keyId)
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
                 val tempo = "${Constants.obterTempoDispositivo()}"
-                val modeloImgSel = ModeloImagemSelecionada(
+                val modeloImgSel = ImagemSelecionada(
                     tempo, imageUri, null, false
                 )
                 imagensSelecionadaArrayList.add(modeloImgSel)
@@ -314,7 +314,7 @@ carregarImagensStorage(keyId)
 
     private fun carregarImagens() {
 
-        adaptadorImagemSelecionada = AdaptadorImagemSelecionada(this, imagensSelecionadaArrayList)
+        adaptadorImagemSelecionada = ImagemSelecionadaAdapter(this, imagensSelecionadaArrayList)
         binding.RVImagens.adapter = adaptadorImagemSelecionada
 
     }
@@ -333,7 +333,7 @@ carregarImagensStorage(keyId)
                 imageUri = data!!.data
 
                 val tempo = "${Constants.obterTempoDispositivo()}"
-                val modeloImgSel = ModeloImagemSelecionada(
+                val modeloImgSel = ImagemSelecionada(
                     tempo, imageUri, null, false
                 )
                 imagensSelecionadaArrayList.add(modeloImgSel)

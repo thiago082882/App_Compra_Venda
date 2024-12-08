@@ -55,7 +55,7 @@
         app:cornerRadius="8dp"
         android:layout_alignParentBottom="true"
         android:textAllCaps="true"
-        app:icon="@drawable/ic_eliminar_cuenta"
+        app:icon="@drawable/ic_eliminar_conta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

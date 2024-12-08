@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".detalhe_anuncio.DetalleAnuncio">
+    tools:context=".detalhe_anuncio.DetalheAnuncio">
 
     <!--Toolbar-->
     <RelativeLayout
@@ -343,7 +343,7 @@
                     android:layout_marginEnd="2dp"
                     android:textSize="12sp"
                     app:cornerRadius="8dp"
-                    app:icon="@drawable/ic_op_locacion"
+                    app:icon="@drawable/ic_op_localizacao"
                     app:iconGravity="top"
                     android:textAllCaps="true"
                     android:layout_width="wrap_content"
@@ -356,7 +356,7 @@
                     android:layout_marginEnd="2dp"
                     android:textSize="12sp"
                     app:cornerRadius="8dp"
-                    app:icon="@drawable/ic_op_llamar"
+                    app:icon="@drawable/ic_op_chamar"
                     app:iconGravity="top"
                     android:textAllCaps="true"
                     android:layout_width="wrap_content"

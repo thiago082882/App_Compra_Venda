@@ -9,13 +9,13 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
 import com.thiago.appcompraevenda.R
 import com.thiago.appcompraevenda.databinding.ItemImagensSelecionadasBinding
-import com.thiago.appcompraevenda.models.ModeloImagemSelecionada
+import com.thiago.appcompraevenda.models.ImagemSelecionada
 
-class AdaptadorImagemSelecionada(
+class ImagemSelecionadaAdapter(
     private val context: Context,
-    private val imagensSelecionadaArrayList: ArrayList<ModeloImagemSelecionada>
+    private val imagensSelecionadaArrayList: ArrayList<ImagemSelecionada>
 
-): RecyclerView.Adapter<AdaptadorImagemSelecionada.HolderImagensSelecionada>() {
+): RecyclerView.Adapter<ImagemSelecionadaAdapter.HolderImagensSelecionada>() {
     private lateinit var  binding : ItemImagensSelecionadasBinding
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HolderImagensSelecionada {

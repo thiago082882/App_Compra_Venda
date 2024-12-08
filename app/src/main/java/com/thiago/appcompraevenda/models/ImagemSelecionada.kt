@@ -2,7 +2,7 @@ package com.thiago.appcompraevenda.models
 
 import android.net.Uri
 
-class ModeloImagemSelecionada {
+class ImagemSelecionada {
 
 
     var id = ""

@@ -17,7 +17,7 @@
     <ImageButton
         android:id="@+id/Ib_cerrar"
         android:padding="5dp"
-        android:src="@drawable/ic_cerrar_dialog"
+        android:src="@drawable/ic_encerrar_dialog"
         android:background="@android:color/transparent"
         android:layout_alignParentEnd="true"
         android:layout_width="wrap_content"
