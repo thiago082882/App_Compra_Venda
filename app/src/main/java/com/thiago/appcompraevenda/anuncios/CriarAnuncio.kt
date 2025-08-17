@@ -144,7 +144,7 @@ class CriarAnuncio : AppCompatActivity() {
       progressDialog.setMessage("Agregando Anuncio")
         progressDialog.show()
 
-        val tempo = "${Constants.obterTempoDispositivo()}"
+        val tempo = Constants.obterTempoDispositivo()
         val ref = FirebaseDatabase.getInstance().getReference("Anuncios")
         val keyId = ref.push().key
         val hashMap =HashMap<String,Any>()
@@ -158,9 +158,10 @@ class CriarAnuncio : AppCompatActivity() {
         hashMap["titulo"] = "${titulo}"
         hashMap["descricao"] = "${descricao}"
         hashMap["status"] = "${Constants.anuncio_disponivel}"
-        hashMap["tempo"] = "${tempo}"
-        hashMap["latitude"] = "${latitude}"
-        hashMap["longitude"] = "${longitude}"
+        hashMap["tempo"] = tempo
+        hashMap["latitude"] = latitude
+        hashMap["longitude"] = longitude
+        hashMap["contadorVistas"] = 0
 
         ref.child(keyId!!)
             .setValue(hashMap)

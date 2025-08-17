@@ -54,11 +54,11 @@ class AnuncioAdapter : RecyclerView.Adapter<AnuncioAdapter.HolderAnuncio>, Filte
         val modeloAnuncio = anuncioArrayList[position]
 
         val titulo = modeloAnuncio.titulo
-        val descripcion = modeloAnuncio.descripcion
-        val direccion = modeloAnuncio.direccion
-        val condicion = modeloAnuncio.condicion
-        val precio = modeloAnuncio.precio
-        val tiempo = modeloAnuncio.tiempo
+        val descripcion = modeloAnuncio.descricao
+        val direccion = modeloAnuncio.direcao
+        val condicion = modeloAnuncio.condicao
+        val precio = modeloAnuncio.preco
+        val tiempo = modeloAnuncio.tempo
 
         val formatoFecha = Constants.obterData(tiempo)
 
@@ -83,7 +83,7 @@ class AnuncioAdapter : RecyclerView.Adapter<AnuncioAdapter.HolderAnuncio>, Filte
             holder.Tv_condicion.setTextColor(Color.parseColor("#48C9B0"))
         } else if (condicion.equals("Usado")) {
             holder.Tv_condicion.setTextColor(Color.parseColor("#5DADE2"))
-        } else if (condicion.equals("Seminovo")) {
+        } else if (condicion.equals("Renovado")) {
             holder.Tv_condicion.setTextColor(Color.parseColor("#A569BD"))
         }
 
@@ -130,11 +130,11 @@ class AnuncioAdapter : RecyclerView.Adapter<AnuncioAdapter.HolderAnuncio>, Filte
         val idAnuncio = modeloAnuncio.id
 
         val ref = FirebaseDatabase.getInstance().getReference("Anuncios")
-        ref.child(idAnuncio).child("Imagenes").limitToFirst(1)
+        ref.child(idAnuncio).child("Imagens").limitToFirst(1)
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     for (ds in snapshot.children) {
-                        val imagenUrl = "${ds.child("imagenUrl").value}"
+                        val imagenUrl = "${ds.child("imagemUrl").value}"
                         try {
                             Glide.with(context)
                                 .load(imagenUrl)

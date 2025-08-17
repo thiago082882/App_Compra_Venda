@@ -76,7 +76,7 @@ object Constants {
 
         val hashMap = HashMap<String, Any>()
         hashMap["idAnuncio"] = idAnuncio
-        hashMap["tiempo"] = tiempo
+        hashMap["tempo"] = tiempo
 
         val ref = FirebaseDatabase.getInstance().getReference("Usuarios")
         ref.child(firebaseAuth.uid!!).child("Favoritos").child(idAnuncio)

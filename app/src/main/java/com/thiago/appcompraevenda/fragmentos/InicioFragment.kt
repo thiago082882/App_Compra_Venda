@@ -167,8 +167,8 @@ class InicioFragment : Fragment() {
                     try {
                         val modeloAnuncio = ds.getValue(Anuncio::class.java)
                         val distancia = calcularDistanciaKM(
-                            modeloAnuncio?.latitud ?: 0.0,
-                            modeloAnuncio?.longitud ?: 0.0
+                            modeloAnuncio?.latitude ?: 0.0,
+                            modeloAnuncio?.longitude ?: 0.0
                         )
                         if (categoria == "Todos"){
                             if (distancia <= MAX_DISTANCIA_MOSTRAR_ANUNCIO){

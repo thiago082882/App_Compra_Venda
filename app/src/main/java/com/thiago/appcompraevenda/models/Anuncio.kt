@@ -6,15 +6,15 @@ class Anuncio {
     var uid : String = ""
     var marca : String = ""
     var categoria : String = ""
-    var condicion : String = ""
-    var direccion : String = ""
-    var precio : String = ""
+    var condicao : String = ""
+    var direcao : String = ""
+    var preco : String = ""
     var titulo : String = ""
-    var descripcion : String = ""
-    var estado : String = ""
-    var tiempo : Long = 0
-    var latitud = 0.0
-    var longitud = 0.0
+    var descricao : String = ""
+    var status : String = ""
+    var tempo : Long = 0
+    var latitude = 0.0
+    var longitude = 0.0
     var favorito = false
     var contadorVistas = 0
 
@@ -24,15 +24,15 @@ class Anuncio {
         uid: String,
         marca: String,
         categoria: String,
-        condicion: String,
-        direccion: String,
-        precio: String,
+        condicao: String,
+        direcao: String,
+        preco: String,
         titulo: String,
-        descripcion: String,
-        estado: String,
-        tiempo: Long,
-        latitud: Double,
-        longitud: Double,
+        descricao: String,
+        status: String,
+        tempo: Long,
+        latitude: Double,
+        longitude: Double,
         favorito: Boolean,
         contadorVistas: Int
     ) {
@@ -40,15 +40,15 @@ class Anuncio {
         this.uid = uid
         this.marca = marca
         this.categoria = categoria
-        this.condicion = condicion
-        this.direccion = direccion
-        this.precio = precio
+        this.condicao = condicao
+        this.direcao = direcao
+        this.preco = preco
         this.titulo = titulo
-        this.descripcion = descripcion
-        this.estado = estado
-        this.tiempo = tiempo
-        this.latitud = latitud
-        this.longitud = longitud
+        this.descricao = descricao
+        this.status = status
+        this.tempo = tempo
+        this.latitude = latitude
+        this.longitude = longitude
         this.favorito = favorito
         this.contadorVistas = contadorVistas
     }
