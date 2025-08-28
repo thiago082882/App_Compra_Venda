@@ -10,9 +10,9 @@ import java.util.HashMap
 import java.util.Locale
 
 object Constants {
-
+    //Constantes de anuncio
     const val  anuncio_disponivel = "Disponivel"
-    const val  anuncio_vendido = "Vendido"
+
 
     val categorias = arrayOf(
         "Todos",
