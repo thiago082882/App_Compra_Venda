@@ -34,7 +34,7 @@ class InicioFragment : Fragment() {
 
 
     private companion object{
-        private const val MAX_DISTANCIA_MOSTRAR_ANUNCIO = 10
+        private const val MAX_DISTANCIA_MOSTRAR_ANUNCIO = 8000000000000000000
     }
 
     private lateinit var mContext : Context
@@ -89,6 +89,7 @@ class InicioFragment : Fragment() {
                     val consulta = filtro.toString()
                     adaptadorAnuncio.filter.filter(consulta)
                 } catch (e: Exception) {
+                    Toast.makeText(mContext, "${e.message}", Toast.LENGTH_SHORT).show()
 
                 }
             }
@@ -167,8 +168,8 @@ class InicioFragment : Fragment() {
                     try {
                         val modeloAnuncio = ds.getValue(Anuncio::class.java)
                         val distancia = calcularDistanciaKM(
-                            modeloAnuncio?.latitud ?: 0.0,
-                            modeloAnuncio?.longitud ?: 0.0
+                            modeloAnuncio?.latitude ?: 0.0,
+                            modeloAnuncio?.longitude ?: 0.0
                         )
                         if (categoria == "Todos"){
                             if (distancia <= MAX_DISTANCIA_MOSTRAR_ANUNCIO){

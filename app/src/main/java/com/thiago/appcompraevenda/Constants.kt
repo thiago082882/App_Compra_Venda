@@ -46,7 +46,7 @@ object Constants {
     val condicao = arrayOf(
         "Novo",
         "Usado",
-        "Renovado"
+        "Seminovo"
     )
 
 
@@ -72,11 +72,11 @@ object Constants {
 
     fun adicionarAnuncioFav (context : Context, idAnuncio : String){
         val firebaseAuth = FirebaseAuth.getInstance()
-        val tiempo = Constants.obterTempoDispositivo()
+        val tempo = Constants.obterTempoDispositivo()
 
         val hashMap = HashMap<String, Any>()
         hashMap["idAnuncio"] = idAnuncio
-        hashMap["tiempo"] = tiempo
+        hashMap["tempo"] = tempo
 
         val ref = FirebaseDatabase.getInstance().getReference("Usuarios")
         ref.child(firebaseAuth.uid!!).child("Favoritos").child(idAnuncio)
@@ -92,7 +92,7 @@ object Constants {
                     Toast.LENGTH_SHORT).show()
             }
     }
-    fun eliminarAnuncioFav (context: Context, idAnuncio: String){
+    fun removerAnuncioFav (context: Context, idAnuncio: String){
         val firebaseAuth = FirebaseAuth.getInstance()
 
         val ref = FirebaseDatabase.getInstance().getReference("Usuarios")

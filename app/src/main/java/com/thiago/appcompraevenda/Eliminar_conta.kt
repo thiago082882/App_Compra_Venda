@@ -1,4 +1,4 @@
 package com.thiago.appcompraevenda
 
-class CambiarPassword {
+class Eliminar_conta {
 }

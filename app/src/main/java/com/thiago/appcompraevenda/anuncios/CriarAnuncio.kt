@@ -23,6 +23,8 @@ import com.thiago.appcompraevenda.SelecioneLocal
 import com.thiago.appcompraevenda.adapters.ImagemSelecionadaAdapter
 import com.thiago.appcompraevenda.databinding.ActivityCriarAnuncioBinding
 import com.thiago.appcompraevenda.models.ImagemSelecionada
+import java.util.Calendar
+import java.util.Locale
 
 class CriarAnuncio : AppCompatActivity() {
     private lateinit var binding: ActivityCriarAnuncioBinding
@@ -140,11 +142,20 @@ class CriarAnuncio : AppCompatActivity() {
                 Toast.makeText(this, "Cancelado",Toast.LENGTH_SHORT).show()
             }
         }
+    fun obterDataFormatada(tempoMillis: Long): String {
+        val calendario = Calendar.getInstance()
+        calendario.timeInMillis = tempoMillis
+        val formato = java.text.SimpleDateFormat("dd/MM/yyyy", Locale("pt", "BR"))
+        return formato.format(calendario.time)
+    }
+
     private fun agregarAnuncio() {
       progressDialog.setMessage("Agregando Anuncio")
         progressDialog.show()
 
-        val tempo = "${Constants.obterTempoDispositivo()}"
+        //val tempo = "${Constants.obterTempoDispositivo()}"
+        val tempoMillis = System.currentTimeMillis()
+        val tempoFormatado = obterDataFormatada(tempoMillis)
         val ref = FirebaseDatabase.getInstance().getReference("Anuncios")
         val keyId = ref.push().key
         val hashMap =HashMap<String,Any>()
@@ -158,9 +169,11 @@ class CriarAnuncio : AppCompatActivity() {
         hashMap["titulo"] = "${titulo}"
         hashMap["descricao"] = "${descricao}"
         hashMap["status"] = "${Constants.anuncio_disponivel}"
-        hashMap["tempo"] = "${tempo}"
+       // hashMap["tempo"] = "${tempo}"
+        hashMap["tempo"] = tempoFormatado // já salva como "dd/MM/yyyy"
         hashMap["latitude"] = "${latitude}"
         hashMap["longitude"] = "${longitude}"
+        hashMap["contadorVistas"] = 0
 
         ref.child(keyId!!)
             .setValue(hashMap)

@@ -54,13 +54,13 @@ class AnuncioAdapter : RecyclerView.Adapter<AnuncioAdapter.HolderAnuncio>, Filte
         val modeloAnuncio = anuncioArrayList[position]
 
         val titulo = modeloAnuncio.titulo
-        val descripcion = modeloAnuncio.descripcion
-        val direccion = modeloAnuncio.direccion
-        val condicion = modeloAnuncio.condicion
-        val precio = modeloAnuncio.precio
-        val tiempo = modeloAnuncio.tiempo
+        val descripcion = modeloAnuncio.descricao
+        val direccion = modeloAnuncio.direcao
+        val condicao = modeloAnuncio.condicao
+        val preco = modeloAnuncio.preco
+        val tempo = modeloAnuncio.tempo
 
-        val formatoFecha = Constants.obterData(tiempo)
+        val formatoFecha = Constants.obterData(tempo)
 
         cargarPrimeraImgAnuncio(modeloAnuncio, holder)
 
@@ -69,8 +69,8 @@ class AnuncioAdapter : RecyclerView.Adapter<AnuncioAdapter.HolderAnuncio>, Filte
         holder.Tv_titulo.text = titulo
         holder.Tv_descripcion.text = descripcion
         holder.Tv_direccion.text = direccion
-        holder.Tv_condicion.text = condicion
-        holder.Tv_precio.text = precio
+        holder.Tv_condicion.text = condicao
+        holder.Tv_precio.text = preco
         holder.Tv_fecha.text = formatoFecha
 
         holder.itemView.setOnClickListener {
@@ -79,11 +79,11 @@ class AnuncioAdapter : RecyclerView.Adapter<AnuncioAdapter.HolderAnuncio>, Filte
             context.startActivity(intent)
         }
 
-        if (condicion.equals("Novo")) {
+        if (condicao.equals("Novo")) {
             holder.Tv_condicion.setTextColor(Color.parseColor("#48C9B0"))
-        } else if (condicion.equals("Usado")) {
+        } else if (condicao.equals("Usado")) {
             holder.Tv_condicion.setTextColor(Color.parseColor("#5DADE2"))
-        } else if (condicion.equals("Seminovo")) {
+        } else if (condicao.equals("Seminovo")) {
             holder.Tv_condicion.setTextColor(Color.parseColor("#A569BD"))
         }
 
@@ -93,7 +93,7 @@ class AnuncioAdapter : RecyclerView.Adapter<AnuncioAdapter.HolderAnuncio>, Filte
 
             if (favorito) {
                 //Favorito = true
-                Constants.eliminarAnuncioFav(context, modeloAnuncio.id)
+                Constants.removerAnuncioFav(context, modeloAnuncio.id)
             } else {
                 //Favorito = false
                 Constants.adicionarAnuncioFav(context, modeloAnuncio.id)
@@ -130,11 +130,11 @@ class AnuncioAdapter : RecyclerView.Adapter<AnuncioAdapter.HolderAnuncio>, Filte
         val idAnuncio = modeloAnuncio.id
 
         val ref = FirebaseDatabase.getInstance().getReference("Anuncios")
-        ref.child(idAnuncio).child("Imagenes").limitToFirst(1)
+        ref.child(idAnuncio).child("Imagens").limitToFirst(1)
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     for (ds in snapshot.children) {
-                        val imagenUrl = "${ds.child("imagenUrl").value}"
+                        val imagenUrl = "${ds.child("imagemUrl").value}"
                         try {
                             Glide.with(context)
                                 .load(imagenUrl)
